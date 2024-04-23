@@ -22,6 +22,7 @@
 		9C7D53D62BD7EA2900804A48 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D53D52BD7EA2900804A48 /* CoinRowView.swift */; };
 		9C7D53D82BD7EA4800804A48 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D53D72BD7EA4800804A48 /* PreviewProvider.swift */; };
 		9C7D53DF2BD7EFB100804A48 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D53DE2BD7EFB100804A48 /* Double.swift */; };
+		9C7D53E32BD82E5100804A48 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D53E22BD82E5100804A48 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		9C7D53D52BD7EA2900804A48 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		9C7D53D72BD7EA4800804A48 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		9C7D53DE2BD7EFB100804A48 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		9C7D53E22BD82E5100804A48 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +113,10 @@
 			isa = PBXGroup;
 			children = (
 				9C2C1D1C2BD656FB00D17446 /* CryptoiOSApp.swift */,
-				9C2C1D1E2BD656FB00D17446 /* ContentView.swift */,
 				9C2C1D482BD6591600D17446 /* Extensions */,
 				9C7D53D22BD7E6CA00804A48 /* Models */,
 				9C7D53B52BD7B1FF00804A48 /* Core */,
+				9C2C1D1E2BD656FB00D17446 /* ContentView.swift */,
 				9C2C1D462BD658C500D17446 /* Assets.xcassets */,
 				9C2C1D222BD656FD00D17446 /* Preview Content */,
 			);
@@ -186,6 +188,7 @@
 		9C7D53B82BD7B22700804A48 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9C7D53E22BD82E5100804A48 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C7D53D62BD7EA2900804A48 /* CoinRowView.swift in Sources */,
+				9C7D53E32BD82E5100804A48 /* HomeViewModel.swift in Sources */,
 				9C2C1D1F2BD656FB00D17446 /* ContentView.swift in Sources */,
 				9C2C1D1D2BD656FB00D17446 /* CryptoiOSApp.swift in Sources */,
 				9C7D53CD2BD7E5E000804A48 /* CircleButtonView.swift in Sources */,

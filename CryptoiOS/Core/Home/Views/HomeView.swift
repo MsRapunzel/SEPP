@@ -8,30 +8,43 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    
+    @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false
     var body: some View {
         ZStack {
+            
             //background layer
             Color.theme.background
                 .ignoresSafeArea ()
+            
             // content layer
             VStack {
-                homeHeader
                 
-                List {
-                    CoinRowView(coin: DeveloperPreview.instance.coin, showHoldingsColumn: false)
+                homeHeader
+                columnTitles
+                if !showPortfolio {
+                    allCoinsList
+                        .transition(.move(edge: .leading))
                 }
-                .listStyle(PlainListStyle())
+                
+                //TODO: if showPortfolio
+                
                 Spacer(minLength: 0)
+                
             }
         }
     }
 }
 
-#Preview {
-    NavigationView{
-        HomeView()
-            .navigationBarHidden(true)
+struct HomeView_Previews: PreviewProvider  {
+    static var previews: some View{
+        NavigationView{
+            HomeView()
+                .navigationBarHidden(true)
+        }
+        .environmentObject(dev.homeVM)
     }
 }
 
@@ -59,6 +72,34 @@ extension HomeView {
                     }
                 }
         }
+        .padding(.horizontal)
+    }
+    
+    private var allCoinsList: some View {
+        List {
+            ForEach(vm.allCoins) { coin in
+                CoinRowView(coin: coin, showHoldingsColumn: false)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 15))
+                    .listRowBackground(Color.theme.background)
+            }
+        }
+        .listStyle(PlainListStyle())
+    }
+    
+    //TODO: Setup the portfolio
+    
+    private var columnTitles: some View {
+        HStack {
+            Text("Coin")
+            Spacer()
+            if showPortfolio {
+                Text("Holdings")
+            }
+            Text("Price")
+                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+        }
+        .font(.caption)
+        .foregroundColor(Color.theme.secondaryText)
         .padding(.horizontal)
     }
 }
