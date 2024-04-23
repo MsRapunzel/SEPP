@@ -4,6 +4,7 @@
 //
 //  Created by Anastasiia Zolotova on 22.04.2024.
 //
+//asdadasd
 
 import SwiftUI
 
@@ -11,7 +12,10 @@ import SwiftUI
 struct CryptoiOSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                HomeView()
+                    .navigationBarHidden(true)
+            }
         }
     }
 }
