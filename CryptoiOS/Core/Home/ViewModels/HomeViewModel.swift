@@ -13,6 +13,7 @@ class HomeViewModel: ObservableObject {
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
     @Published var isLoading: Bool = false
+    @Published var searchText: String = ""
     
     private let coinDataService = CoinDataService()
     
