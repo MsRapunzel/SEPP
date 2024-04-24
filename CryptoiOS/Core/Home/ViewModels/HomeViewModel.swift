@@ -12,8 +12,9 @@ class HomeViewModel: ObservableObject {
     
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
+    @Published var isLoading: Bool = false
     
-    private let dataService = CoinDataService()
+    private let coinDataService = CoinDataService()
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -22,10 +23,15 @@ class HomeViewModel: ObservableObject {
     }
     
     func addSubscriber() {
-        dataService.$allCoins
+        coinDataService.$allCoins
             .sink { [weak self] (returnedCoins) in
                 self?.allCoins = returnedCoins
             }
             .store(in: &cancellables)
+    }
+    
+    func reloadData() {
+        isLoading = true
+        coinDataService.getCoins()
     }
 }
