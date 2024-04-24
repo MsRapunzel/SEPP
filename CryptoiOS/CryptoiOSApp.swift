@@ -4,7 +4,6 @@
 //
 //  Created by Anastasiia Zolotova on 22.04.2024.
 //
-//asdadasd
 
 import SwiftUI
 
