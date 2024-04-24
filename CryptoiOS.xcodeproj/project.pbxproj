@@ -31,6 +31,9 @@
 		9C7DA8C32BD92D5E00F0CFFC /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DA8C22BD92D5E00F0CFFC /* LocalFileManager.swift */; };
 		9C7DA8C52BD9317500F0CFFC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DA8C42BD9317500F0CFFC /* SearchBarView.swift */; };
 		9C7DA8C72BD9351B00F0CFFC /* UIAplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DA8C62BD9351B00F0CFFC /* UIAplication.swift */; };
+		9C7DA8C92BD940F000F0CFFC /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DA8C82BD940F000F0CFFC /* StatisticModel.swift */; };
+		9C7DA8CB2BD941F200F0CFFC /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DA8CA2BD941F200F0CFFC /* StatisticView.swift */; };
+		9C7DA8CD2BD9425E00F0CFFC /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DA8CC2BD9425E00F0CFFC /* HomeStatsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		9C7DA8C22BD92D5E00F0CFFC /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		9C7DA8C42BD9317500F0CFFC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		9C7DA8C62BD9351B00F0CFFC /* UIAplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAplication.swift; sourceTree = "<group>"; };
+		9C7DA8C82BD940F000F0CFFC /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
+		9C7DA8CA2BD941F200F0CFFC /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		9C7DA8CC2BD9425E00F0CFFC /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				9C7D53D02BD7E62200804A48 /* HomeView.swift */,
+				9C7DA8CC2BD9425E00F0CFFC /* HomeStatsView.swift */,
 				9C7D53D52BD7EA2900804A48 /* CoinRowView.swift */,
 			);
 			path = Views;
@@ -217,7 +224,6 @@
 			children = (
 				9C7D53CC2BD7E5E000804A48 /* CircleButtonView.swift */,
 				9C7D53CE2BD7E60C00804A48 /* CircleButtonAnimationView.swift */,
-				9C7DA8C42BD9317500F0CFFC /* SearchBarView.swift */,
 			);
 			path = CircleButton;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				9C7D53D32BD7E71400804A48 /* CoinModel.swift */,
+				9C7DA8C82BD940F000F0CFFC /* StatisticModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +260,8 @@
 			children = (
 				9C7DA8BB2BD907E100F0CFFC /* CoinImage */,
 				9C7D53BB2BD7B29700804A48 /* CircleButton */,
+				9C7DA8C42BD9317500F0CFFC /* SearchBarView.swift */,
+				9C7DA8CA2BD941F200F0CFFC /* StatisticView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -396,12 +405,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C7DA8C92BD940F000F0CFFC /* StatisticModel.swift in Sources */,
 				9C7D53E62BD8364600804A48 /* CoinDataService.swift in Sources */,
 				9C7D53D62BD7EA2900804A48 /* CoinRowView.swift in Sources */,
 				9C7D53E32BD82E5100804A48 /* HomeViewModel.swift in Sources */,
 				9C7DA8B92BD8F95000F0CFFC /* NetworkingManager.swift in Sources */,
 				9C7DA8C32BD92D5E00F0CFFC /* LocalFileManager.swift in Sources */,
 				9C2C1D1F2BD656FB00D17446 /* ContentView.swift in Sources */,
+				9C7DA8CB2BD941F200F0CFFC /* StatisticView.swift in Sources */,
 				9C7DA8BD2BD907F600F0CFFC /* CoinImageView.swift in Sources */,
 				9C2C1D1D2BD656FB00D17446 /* CryptoiOSApp.swift in Sources */,
 				9C7D53CD2BD7E5E000804A48 /* CircleButtonView.swift in Sources */,
@@ -409,6 +420,7 @@
 				9C7DA8C52BD9317500F0CFFC /* SearchBarView.swift in Sources */,
 				9C2C1D4C2BD65B8700D17446 /* Color.swift in Sources */,
 				9C7DA8C72BD9351B00F0CFFC /* UIAplication.swift in Sources */,
+				9C7DA8CD2BD9425E00F0CFFC /* HomeStatsView.swift in Sources */,
 				9C7D53CF2BD7E60C00804A48 /* CircleButtonAnimationView.swift in Sources */,
 				9C7DA8C12BD9224900F0CFFC /* CoinImageViewModel.swift in Sources */,
 				9C7D53D82BD7EA4800804A48 /* PreviewProvider.swift in Sources */,
