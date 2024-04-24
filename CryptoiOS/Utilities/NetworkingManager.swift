@@ -13,11 +13,13 @@ class NetworkingManager {
     enum NetworkingError: LocalizedError {
         case badURLResponse(url: URL)
         case unknown
+        case tooManyRequests(url: URL)
         
         var errorDescription: String? {
             switch self {
             case .badURLResponse(url: let url): return "[🔥] Bad response from URL: \(url)"
             case .unknown: return "[⚠️] Unknown error occured"
+            case .tooManyRequests(url: let url): return "[🥲] Too many requests at URL: \(url)"
             }
         }
     }
@@ -30,12 +32,18 @@ class NetworkingManager {
     }
     
     static func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
-        guard let response = output.response as? HTTPURLResponse,
-              response.statusCode >= 200 && response.statusCode < 300 else {
+        guard let response = output.response as? HTTPURLResponse else {
             throw NetworkingError.badURLResponse(url: url)
         }
-        
-        return output.data
+
+        switch response.statusCode {
+        case 200:
+            return output.data
+        case 429:
+            throw NetworkingError.tooManyRequests(url: url)
+        default:
+            throw NetworkingError.badURLResponse(url: url)
+        }
     }
     
     static func handleCompletion(completion: Subscribers.Completion<Error>) {
