@@ -22,6 +22,6 @@ struct CircleButtonAnimationView: View {
 
 #Preview {
     CircleButtonAnimationView(animate: .constant(false))
-        .foregroundColor(.red)
+        .foregroundStyle(.red)
         .frame(width: 100, height: 100)
 }

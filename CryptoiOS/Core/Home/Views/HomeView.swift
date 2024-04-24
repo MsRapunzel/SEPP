@@ -55,14 +55,14 @@ extension HomeView {
         HStack {
             CircleButtonView(iconName: showPortfolio ? "plus" : "info")
                 .animation(.none, value: UUID())
-                .background(
+                .background(){
                     CircleButtonAnimationView(animate: $showPortfolio)
-                )
+                }
             Spacer()
             Text(showPortfolio ? "Portfolio" : "Live Prices")
                 .font(.headline)
                 .fontWeight(.heavy)
-                .foregroundColor(Color.theme.accent)
+                .foregroundStyle(Color.theme.accent)
                 .animation(.none)
             Spacer()
             CircleButtonView(iconName: "chevron.right")
@@ -109,7 +109,7 @@ extension HomeView {
             .rotationEffect(Angle(degrees: vm.isLoading ? 360 : 0), anchor: .center)
         }
         .font(.caption)
-        .foregroundColor(Color.theme.secondaryText)
+        .foregroundStyle(Color.theme.secondaryText)
         .padding(.horizontal)
     }
 }
