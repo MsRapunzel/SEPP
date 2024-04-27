@@ -92,16 +92,37 @@ extension HomeView {
     
     private var columnTitles: some View {
         HStack {
-            Text("Coin")
-            Spacer()
-            if showPortfolio {
-                Text("Holdings")
+            HStack(spacing: 4) {
+                Text("Coin")
+                Image(systemName: "chevron.down")
+                    .opacity((vm.sortOption == .rank || vm.sortOption == .rankReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: vm.sortOption == .rank ? 0 : 180))
             }
-            Text("Price")
-                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            .onTapGesture {
+                withAnimation(.default) {
+                    vm.sortOption = vm.sortOption == .rank ? .rankReversed : .rank
+                }
+            }
+            
+            Spacer()
+            
+            // TODO: if showPortfolio
+            
+            HStack(spacing: 4) {
+                Text("Price")
+                Image(systemName: "chevron.down")
+                    .opacity((vm.sortOption == .price || vm.sortOption == .priceReversed) ? 1.0 : 0.0)
+                    .rotationEffect(Angle(degrees: vm.sortOption == .price ? 0 : 180))
+            }
+            .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+            .onTapGesture {
+                withAnimation(.default) {
+                    vm.sortOption = vm.sortOption == .price ? .priceReversed : .price
+                }
+            }
             
             Button(action: {
-                withAnimation(.linear(duration: 2.0)){
+                withAnimation(.linear(duration: 2.0)) {
                     vm.reloadData()
                 }
             }, label: {
