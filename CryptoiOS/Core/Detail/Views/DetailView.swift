@@ -13,7 +13,7 @@ struct DetailLoadingView: View {
     
     init(coin: Binding<CoinModel?>) {
         self._coin = coin
-        print("Initializing Detail View for \(coin.wrappedValue?.name)")
+        print("Initializing Detail View for \(String(describing: coin.wrappedValue?.name))")
     }
     
     var body: some View {
@@ -26,15 +26,15 @@ struct DetailLoadingView: View {
 }
 
 struct DetailView: View {
-    let coin: CoinModel
+    @StateObject var vm: DetailViewModel
     
     init(coin: CoinModel) {
-        self.coin = coin
-        print("Initializing Detail View for \(coin.wrappedValue?.name)")
+        _vm = StateObject(wrappedValue: DetailViewModel(coin: coin))
+        print("Initializing Detail View for \(coin.name)")
     }
     
     var body: some View {
-        Text(coin.name)
+        Text("Hello")
     }
 }
 
