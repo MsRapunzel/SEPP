@@ -98,6 +98,7 @@ import Foundation
 
 
 struct CoinDetailModel: Codable {
+    
     let id, symbol, name: String?
     let blockTimeInMinutes: Int?
     let hashingAlgorithm: String?
@@ -109,6 +110,11 @@ struct CoinDetailModel: Codable {
         case blockTimeInMinutes = "block_time_in_minutes"
         case hashingAlgorithm = "hashing_algorithm"
     }
+    
+    var readableDescription: String? {
+        return description?.en?.removingHTMLOccurances
+    }
+    
 }
 
 struct Links: Codable {
