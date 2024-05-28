@@ -12,6 +12,7 @@ CryptoiOS is a cryptocurrency app that downloads live price data from an API and
 
 - ``NetworkingManager``
 - ``LocalFileManager``
+- ``HapticManager``
 
 ### Extensions
 
@@ -24,6 +25,7 @@ CryptoiOS is a cryptocurrency app that downloads live price data from an API and
 - ``CoinDetailDataService``
 - ``CoinImageService``
 - ``MarketDataService``
+- ``PortfolioDataService``
 
 ### Models
 
@@ -35,10 +37,12 @@ CryptoiOS is a cryptocurrency app that downloads live price data from an API and
 ### CoinImage
 - ``CoinImageView``
 - ``CoinImageViewModel``
+- ``CoinLogoView``
 
 ### CircleButton
 - ``CircleButtonView``
 - ``CircleButtonAnimationView``
+- ``XMarkButton``
 
 ### Components
 - ``SearchBarView``
@@ -51,6 +55,7 @@ CryptoiOS is a cryptocurrency app that downloads live price data from an API and
 - ``HomeView``
 - ``HomeStatsView``
 - ``CoinRowView``
+- ``PortfolioView``
 
 ### Detail – ViewModels
 - ``DetailViewModel``
