@@ -7,13 +7,19 @@
 
 import SwiftUI
 
+/// The main view for the home screen.
 struct HomeView: View {
     
-    
+    /// The view model for the home screen.
     @EnvironmentObject private var vm: HomeViewModel
+    
+    /// A state variable indicating whether the portfolio should be shown.
     @State private var showPortfolio: Bool = false
     
+    /// A state variable for the selected coin.
     @State private var selectedCoin: CoinModel? = nil
+    
+    /// A state variable indicating whether the detail view should be shown.
     @State private var showDetailView: Bool = false
     
     var body: some View {
@@ -62,6 +68,7 @@ struct HomeView_Previews: PreviewProvider  {
 
 extension HomeView {
     
+    /// A view for header section of the home view.
     private var homeHeader: some View {
         HStack {
             CircleButtonView(iconName: showPortfolio ? "plus" : "info")
@@ -87,6 +94,7 @@ extension HomeView {
         .padding(.horizontal)
     }
     
+    /// A view for list of all coins.
     private var allCoinsList: some View {
         List {
             ForEach(vm.allCoins) { coin in
@@ -101,6 +109,8 @@ extension HomeView {
         .listStyle(PlainListStyle())
     }
     
+    /// Segue to the detail view for a selected coin.
+    /// - Parameter coin: The coin model to be passed to the detail view.
     private func segue(coin: CoinModel) {
         selectedCoin = coin
         showDetailView.toggle()
@@ -108,6 +118,7 @@ extension HomeView {
     
     //TODO: Setup the portfolio
     
+    /// The column titles section of the home view.
     private var columnTitles: some View {
         HStack {
             HStack(spacing: 4) {

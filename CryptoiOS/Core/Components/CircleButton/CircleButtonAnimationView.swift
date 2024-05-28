@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+/// A view that animates a circle stroke based on a binding boolean value.
 struct CircleButtonAnimationView: View {
     
+    /// A binding boolean value that triggers the animation.
     @Binding var animate: Bool
     
     var body: some View {

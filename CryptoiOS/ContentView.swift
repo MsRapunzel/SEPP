@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// View that displays the app color scheme.
 struct ContentView: View {
     var body: some View {
         ZStack {

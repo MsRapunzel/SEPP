@@ -8,8 +8,10 @@
 import Foundation
 import SwiftUI
 
+/// Extension of `UIApplication` that provides a method to dismiss the keyboard.
 extension UIApplication {
     
+    /// Ends editing by dismissing the keyboard.
     func endEditing() {
         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// View that displays a chart for a given coin's price data over the last 7 days.
 struct ChartView: View {
     
     private let data: [Double]
@@ -17,6 +18,9 @@ struct ChartView: View {
     private let endingDate: Date
     @State private var percentage: CGFloat = 0
     
+    /// Initializes the chart view with a given coin model.
+    ///
+    /// - Parameter coin: The coin model containing the price data.
     init(coin: CoinModel) {
         data = coin.sparklineIn7D?.price ?? []
         maxY = data.max() ?? 0
@@ -29,6 +33,7 @@ struct ChartView: View {
         startingDate = endingDate.addingTimeInterval(-7*24*60*60)
     }
     
+    /// Main chart view.
     var body: some View {
         VStack {
             chartView
@@ -60,6 +65,7 @@ struct ChartView_Previews: PreviewProvider {
 
 extension ChartView {
     
+    /// Subview that renders the chart line.
     private var chartView: some View {
         GeometryReader { geometry in
             Path { path in
@@ -87,6 +93,7 @@ extension ChartView {
         }
     }
     
+    /// Subview that renders the background of the chart.
     private var chartBackground: some View {
         VStack {
             Divider()
@@ -97,6 +104,7 @@ extension ChartView {
         }
     }
     
+    /// Subview that renders the Y-axis labels of the chart.
     private var chartYAxis: some View {
         VStack {
             Text(maxY.formattedWithAbbreviations())
@@ -107,6 +115,7 @@ extension ChartView {
         }
     }
     
+    /// Subview that renders the date labels of the chart.
     private var chartDateLabels: some View {
         HStack {
             Text(startingDate.asShortDateString())

@@ -7,10 +7,15 @@
 
 import SwiftUI
 
+/// A view that displays a coin image or a loading indicator.
 struct CoinImageView: View {
     
+    /// The view model managing the coin image state.
     @StateObject var vm: CoinImageViewModel
     
+    /// Initializes a new view with the specified coin model.
+    ///
+    /// - Parameter coin: The coin model.
     init(coin: CoinModel) {
         _vm = StateObject(wrappedValue: CoinImageViewModel(coin: coin))
     }

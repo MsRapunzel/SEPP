@@ -56,6 +56,7 @@ import Foundation
 import Foundation
 
 
+/// A model representing a cryptocurrency coin, conforming to `Identifiable` and `Codable` protocols.
 struct CoinModel: Identifiable, Codable {
     let id, symbol, name: String
     let image: String
@@ -76,6 +77,7 @@ struct CoinModel: Identifiable, Codable {
     let priceChangePercentage24HInCurrency: Double?
     let currentHoldings: Double?
     
+    /// Coding keys to map JSON keys to Swift properties.
     enum CodingKeys: String, CodingKey {
         case id, symbol, name, image
         case currentPrice = "current_price"
@@ -104,20 +106,28 @@ struct CoinModel: Identifiable, Codable {
         case currentHoldings
     }
     
+    /// Updates the holdings of the coin.
+    ///
+    /// - Parameter amount: The new amount of holdings.
+    /// - Returns: A new instance of `CoinModel` with updated holdings.
     func updateHoldings(amount: Double) -> CoinModel {
         return CoinModel(id: id, symbol: symbol, name: name, image: image, currentPrice: currentPrice, marketCap: marketCap, marketCapRank: marketCapRank, fullyDilutedValuation: fullyDilutedValuation, totalVolume: totalVolume, high24H: high24H, low24H: low24H, priceChange24H: priceChange24H, priceChangePercentage24H: priceChangePercentage24H, marketCapChange24H: marketCapChange24H, marketCapChangePercentage24H: marketCapChangePercentage24H, circulatingSupply: circulatingSupply, totalSupply: totalSupply, maxSupply: maxSupply, ath: ath, athChangePercentage: athChangePercentage, athDate: athDate, atl: atl, atlChangePercentage: atlChangePercentage, atlDate: atlDate, lastUpdated: lastUpdated, sparklineIn7D: sparklineIn7D, priceChangePercentage24HInCurrency: priceChangePercentage24HInCurrency, currentHoldings: amount)
     }
     
+    /// Calculates the value of current holdings.
     var currentHoldingsValue: Double {
         return (currentHoldings ?? 0) * currentPrice
     }
     
+    /// Retrieves the market cap rank as an integer.
     var rank: Int {
         return Int(marketCapRank ?? 0)
     }
     
 }
 
+  /// Model that represents the sparkline data for the last 7 days.
 struct SparklineIn7D: Codable {
+    /// The price data points for the last 7 days.
     let price: [Double]?
 }

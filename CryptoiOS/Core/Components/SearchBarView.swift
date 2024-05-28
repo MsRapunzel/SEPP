@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+/// A SwiftUI view for a search bar.
 struct SearchBarView: View {
     
+    /// The search text binding.
     @Binding var searchText: String
     
     var body: some View {
@@ -48,6 +50,7 @@ struct SearchBarView: View {
     }
 }
 
+/// A preview provider for `SearchBarView`.
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
         Group {

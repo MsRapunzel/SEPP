@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+/// A view representing a row of coin data.
 struct CoinRowView: View {
     
+    /// The coin model associated with this row.
     let coin: CoinModel
+    
+    /// A boolean indicating whether the holdings column should be shown.
     let showHoldingsColumn: Bool
     
     var body: some View {
@@ -42,6 +46,7 @@ struct CoinRowView_Previews: PreviewProvider  {
 
 extension CoinRowView {
     
+    /// The left column of the coin row, displaying the rank, image, and symbol of the coin.
     private var leftColumn: some View {
         HStack(spacing: 0) {
             Text("\(coin.rank)")
@@ -57,6 +62,7 @@ extension CoinRowView {
         }
     }
     
+    /// The center column of the coin row, displaying the holdings value and amount.
     private var centerColumn: some View {
         VStack(alignment: .trailing) {
             Text(coin.currentHoldingsValue.asCurrencyWith2Decimals())
@@ -66,6 +72,7 @@ extension CoinRowView {
         .foregroundStyle(Color.theme.accent)
     }
     
+    /// The right column of the coin row, displaying the current price and price change percentage.
     private var rightColumn: some View {
         VStack(alignment: .trailing) {
             Text(coin.currentPrice.asCurrencyWith6Decimals())

@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+/// A view representing the home statistics section.
 struct HomeStatsView: View {
     
+    /// The view model for the home screen.
     @EnvironmentObject private var vm: HomeViewModel
+    
+    /// A binding indicating whether the portfolio should be shown.
     @Binding var showPortfolio: Bool
     
     var body: some View {

@@ -96,7 +96,7 @@ import Foundation
  
  */
 
-
+/// Model that represents detailed information about a coin.
 struct CoinDetailModel: Codable {
     
     let id, symbol, name: String?
@@ -105,28 +105,33 @@ struct CoinDetailModel: Codable {
     let description: Description?
     let links: Links?
     
+    /// Coding keys to map JSON keys to Swift properties.
     enum CodingKeys: String, CodingKey {
         case id, symbol, name, description, links
         case blockTimeInMinutes = "block_time_in_minutes"
         case hashingAlgorithm = "hashing_algorithm"
     }
     
+    /// - Returns: A readable description by removing HTML occurrences.
     var readableDescription: String? {
         return description?.en?.removingHTMLOccurances
     }
     
 }
 
+/// Model that represents links related to a coin.
 struct Links: Codable {
     let homepage: [String]?
     let subredditURL: String?
     
+    /// Coding keys to map JSON keys to Swift properties.
     enum CodingKeys: String, CodingKey {
         case homepage
         case subredditURL = "subreddit_url"
     }
 }
 
+/// Model that represents a description for the coin.
 struct Description: Codable {
     let en: String?
 }

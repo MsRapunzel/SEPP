@@ -10,23 +10,35 @@ import SwiftUI
 
 extension PreviewProvider {
     
+    /// Provides a singleton instance of `DeveloperPreview` for SwiftUI previews.
     static var dev: DeveloperPreview {
         return DeveloperPreview.instance
     }
     
 }
 
+/// A class that provides mock data for SwiftUI previews.
 class DeveloperPreview {
     
+    /// The singleton instance of `DeveloperPreview`.
     static let instance = DeveloperPreview()
+    
+    /// Private initializer to enforce singleton pattern.
     private init() { }
     
+    /// An instance of `HomeViewModel` for preview purposes.
     let homeVM = HomeViewModel()
     
+    /// A mock statistic model representing market capitalization.
     let stat1 = StatisticModel(title: "Market Cap", value: "$12.5Bn", percentageChange: 25.34)
+    
+    /// A mock statistic model representing total volume.
     let stat2 = StatisticModel(title: "Total Volume", value: "$1.23Tr")
+    
+    /// A mock statistic model representing portfolio value.
     let stat3 = StatisticModel(title: "Portfolio Value", value: "$50.4k", percentageChange: -12.34)
     
+    /// A mock coin model representing Bitcoin.
     let coin = CoinModel(
         id: "bitcoin",
         symbol: "btc",

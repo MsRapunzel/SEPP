@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+/// A view that displays a circular button with a system icon.
 struct CircleButtonView: View {
     
+    /// The name of the system icon to be displayed in the button.
     let iconName: String
     
     var body: some View {

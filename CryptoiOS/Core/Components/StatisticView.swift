@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+/// A SwiftUI view that displays a statistic.
 struct StatisticView: View {
     
+    /// The statistic model to display.
     let stat: StatisticModel
     
     var body: some View {
