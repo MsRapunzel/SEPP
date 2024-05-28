@@ -10,10 +10,6 @@ import SwiftUI
 /// The main view for the home screen.
 struct HomeView: View {
     
-    
-    @StateObject private var networkMonitor = NetworkMonitor()
-    
-    
     /// The view model for the home screen.
     @EnvironmentObject private var vm: HomeViewModel
     
@@ -70,8 +66,10 @@ struct HomeView: View {
                 }
                 
                 Spacer(minLength: 0)
-                
             }
+            .sheet(isPresented: $showSettingsView, content: {
+                SettingsView()
+            })
         }
         .background(
             NavigationLink(
